@@ -1,13 +1,13 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import HomePage from "./pages/HomePage";
-import POSPage from "./pages/POSPage";
+import HomePage from "./pages/HomePage.jsx";
+import POSPage from "./pages/POSPage.jsx";
 
 function App() {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/posPage" element={<POSPage />} />
+        <Route path="/pos" element={<POSPage />} />
       </Routes>
     </Router>
   );
