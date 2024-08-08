@@ -5,6 +5,7 @@ import { useState } from "react";
 export default function POSPage() {
   const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [cart, setCart] = useState([]);
 
   //fetch backend data
   const fetchProducts = async () => {
@@ -18,6 +19,9 @@ export default function POSPage() {
     fetchProducts();
   }, []);
 
+  const addProductToCart = async (product) => {
+    console.log(product);
+  };
   return (
     <MainLayout>
       <div className="row">
@@ -29,7 +33,10 @@ export default function POSPage() {
             <div className="row">
               {products.map((product, index) => (
                 <div key={index} className="col-lg-4">
-                  <div className="border">
+                  <div
+                    className="border"
+                    onClick={() => addProductToCart(product)}
+                  >
                     <p>{product.name}</p>
                     <img
                       src={product.image}
